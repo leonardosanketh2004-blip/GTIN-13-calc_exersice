@@ -32,15 +32,14 @@ for ((i = ${#num} -1; i >= 0; i--)); do
         echo "________________________________________________________________"
     fi
 
-    posizione=${gtin:1:1}
-    x=$(( 10 - posizione ))
-    
-    y=$((gtin + x))
-    echo "arrondamento: $y"
+    gtin=${gtin:1:1}
+    gtin=$(( 10 - gtin ))
 
-   result=$((y - gtin))
-   echo "checksum: $result"
+    gtin=${gtin:1:1}
+
+    
+
 done
 
 
-echo "Risultato: $num$result"
+echo "Risultato: $num$gtin"
